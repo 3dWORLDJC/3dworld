@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Контакти | 3D World</title>
+  <title>Soldering Accessory | 3D World</title>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap&subset=cyrillic" rel="stylesheet" />
   <style>
     body {
@@ -22,7 +22,7 @@
       padding: 20px 40px;
       box-shadow: 0 2px 5px #000;
       position: relative;
-      }   
+    }
 
     .navbar img {
       height: 150px;
@@ -69,7 +69,7 @@
       transition: all 0.3s;
     }
 
-    /* Slide-in menu */
+    /* Slide-in menu for mobile */
     @media (max-width: 768px) {
       .nav-links {
         position: fixed;
@@ -107,79 +107,44 @@
     }
 
     .content h1 {
-      text-align: center;
       color: #aa9a0c;
       margin-top: 0;
     }
 
+    .content img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
     .content p {
       font-size: 18px;
+      line-height: 1.6;
       color: #333;
-      text-align: center;
+      margin-top: 15px;
     }
 
-    /* Contact info */
-    .contact-info {
-      margin-top: 20px;
-      text-align: center;
+    /* Back button */
+    .back-button {
+      display: inline-block;
+      padding: 12px 25px;
       font-size: 18px;
-      color: #333;
-    }
-
-    .contact-info p {
-      margin: 8px 0;
-    }
-
-    /* Contact form */
-    .contact-form {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contact-form label {
       font-weight: bold;
-      color: #222;
-      margin-bottom: 5px;
-      text-align: left;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      outline: none;
-      transition: border 0.3s;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: #aa9a0c;
-    }
-
-    .contact-form textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .contact-form button {
-      background-color: #000;
       color: #fff;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 12px;
-      border: none;
+      background-color: #000;
+      border: 2px solid #000;
       border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s;
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
 
-    .contact-form button:hover {
-      background-color: #aa9a0c;
-      color: #000;
+    .back-button:hover {
+      background-color: #fff;
+      color: #aa9a0c;
+      border-color: #aa9a0c;
     }
   </style>
 </head>
@@ -202,33 +167,13 @@
 
   <!-- Content -->
   <div class="content">
-    <h1>Свържете се с нас</h1>
-    <p>Ако имате въпроси или предложения, можете да ни пишете чрез формата по-долу или да се свържете директно с нас.</p>
-
-    <!-- Contact Info -->
-    <div class="contact-info">
-      <p><strong>📍 Адрес:</strong> Смолян, България</p>
-      <p><strong>📧 Имейл:</strong> 3dworldjor@gmail.com</p>
-      <p><strong>📞 Телефон:</strong> +359 87 966 8166</p>
-    </div>
-
-    <div class="contact-info">
-     <p><strong>Ако откривате някои проблеми в сайта моля подайте сигнал на имейл адреса горе!</strong></p>
-    </div>
-
-    <!-- Contact Form -->
-    <!--<form class="contact-form">
-      <label for="name">Име</label>
-      <input type="text" id="name" name="name" placeholder="Въведете вашето име" required />
-
-      <label for="email">Имейл</label>
-      <input type="email" id="email" name="email" placeholder="Въведете вашия имейл" required />
-
-      <label for="message">Съобщение</label>
-      <textarea id="message" name="message" placeholder="Въведете вашето съобщение" required></textarea>
-
-      <button type="submit">Изпрати</button>
-    </form> -->
+    <h1>Солдеринг Аксесоар</h1>
+    <img src="pictures/soldering_accessory.png" alt="Soldering Accessory 3D Модел" />
+    <p>
+      Практичен 3D модел на солдеринг аксесоар, идеален за помощ при работа с електроника и микроелементи.
+      Моделът е проектиран за прецизност и лесно използване при 3D принтиране.
+    </p>
+    <a href="3d_models.html" class="back-button">⬅ Назад към 3D Модели</a>
   </div>
 
   <script>
