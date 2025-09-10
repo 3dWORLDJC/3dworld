@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Rubik', sans-serif;
-      background-color: #fff; /* White background like the homepage */
+      background-color: #fff;
       color: #222;
     }
 
@@ -17,24 +17,39 @@
     .navbar {
       display: flex;
       align-items: center;
-      background-color: #000; /* Black navbar */
+      justify-content: space-between;
+      background-color: #000;
       padding: 20px 40px;
       box-shadow: 0 2px 5px #000;
+      position: relative;
+  
+      /* Animation properties */
+      transform: translateY(-100%);
+      animation: slideDown 0.4s forwards ease-out;
     }
 
+    @keyframes slideDown {
+      to {
+        transform: translateY(0);
+     }
+    }
+    
     .navbar img {
       height: 150px;
       width: 150px;
       object-fit: cover;
-      margin-right: 40px;
-      border-radius: 8px;
+      border-radius: 0px;
       background-color: #fff;
     }
 
-    .navbar a {
-      color: #fff; /* White links */
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #fff;
       text-decoration: none;
-      margin-right: 30px;
       font-weight: 700;
       font-size: 20px;
       padding: 10px 20px;
@@ -43,10 +58,51 @@
       transition: all 0.3s;
     }
 
-    .navbar a:hover {
-      color: #aa9a0c; /* Gold hover */
+    .nav-links a:hover {
+      color: #aa9a0c;
       border-color: #aa9a0c;
       background-color: #222;
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      transition: all 0.3s;
+    }
+
+    /* Slide-in menu */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
     }
 
     /* Content box */
@@ -54,14 +110,14 @@
       max-width: 900px;
       margin: 40px auto;
       padding: 20px;
-      background-color: #f0f0f0; /* Light gray box */
+      background-color: #f0f0f0;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
       text-align: center;
     }
 
     .content h1 {
-      color: #aa9a0c; /* Gold heading */
+      color: #aa9a0c;
       margin-top: 0;
     }
 
@@ -74,27 +130,37 @@
 </head>
 <body>
   <div class="navbar">
-    <img src="pictures/logo.png" alt="Lider Deliver Logo" />
-    <a href="home.html">Начало</a>
-    <a href="3d_models.html">3D Модели</a>
-    <a href="about_us.html">За нас</a>
-    <a href="contacts.html">Контакти</a>
+    <img src="pictures/logo.png" alt="3D World Logo" />
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">Начало</a>
+      <a href="3d_models.html">3D Модели</a>
+      <a href="about_us.html">За нас</a>
+      <a href="contacts.html">Контакти</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 
   <div class="content">
     <h1>За нас</h1>
-      <p>
-       Ние от <strong>3D World</strong> се стремим да предоставяме най-добрите 3D модели и ресурси за 3D принтиране, 
-        като се фокусираме върху креативност, качество и удобство за нашите потребители.
-      </p>
     <p>
-      Нашата цел е да направим процеса на откриване и използване на 3D модели лесен и забавен. 
-      Тук ще намерите разнообразие от проекти – от декоративни предмети до практични инструменти – готови за печат.
+      Наричаме се <strong>3D World</strong>. Ние 3D принтираме различни неща и се стремим да пресъздадем максимално вашите идеи. В този сайт можете да откриете различни продукти и информация за нас. Целта ни е всеки ден да се подобряваме.
     </p>
     <p>
       Благодарим ви, че посещавате нашия сайт и сте част от общността на <strong>3D World</strong>!
     </p>
   </div>
 
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

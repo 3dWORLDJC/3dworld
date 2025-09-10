@@ -17,24 +17,39 @@
     .navbar {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       background-color: #000;
       padding: 20px 40px;
       box-shadow: 0 2px 5px #000;
+      position: relative;
+  
+      /* Animation properties */
+      transform: translateY(-100%);
+      animation: slideDown 0.4s forwards ease-out;
+    }
+
+    @keyframes slideDown {
+      to {
+        transform: translateY(0);
+     }
     }
 
     .navbar img {
       height: 150px;
       width: 150px;
       object-fit: cover;
-      margin-right: 40px;
-      border-radius: 8px;
+      border-radius: 0px;
       background-color: #fff;
     }
 
-    .navbar a {
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
       color: #fff;
       text-decoration: none;
-      margin-right: 30px;
       font-weight: 700;
       font-size: 20px;
       padding: 10px 20px;
@@ -43,10 +58,51 @@
       transition: all 0.3s;
     }
 
-    .navbar a:hover {
+    .nav-links a:hover {
       color: #aa9a0c;
       border-color: #aa9a0c;
       background-color: #222;
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      transition: all 0.3s;
+    }
+
+    /* Slide-in menu */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
     }
 
     /* Content */
@@ -57,6 +113,7 @@
       background-color: #f0f0f0;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      text-align: center;
     }
 
     .content h1 {
@@ -75,6 +132,8 @@
     .models-container {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .model-card {
@@ -130,58 +189,97 @@
 </head>
 <body>
   <div class="navbar">
-    <img src="pictures/logo.png" alt="Lider Deliver Logo" />
-    <a href="home.html">Начало</a>
-    <a href="3d_models.html">3D Модели</a>
-    <a href="about_us.html">За нас</a>
-    <a href="contacts.html">Контакти</a>
+    <img src="pictures/logo.png" alt="3D World Logo" />
+    <div class="nav-links" id="navLinks">
+      <a href="home.html">Начало</a>
+      <a href="3d_models.html">3D Модели</a>
+      <a href="about_us.html">За нас</a>
+      <a href="contacts.html">Контакти</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 
   <div class="content">
     <h1>Нашите 3D Модели</h1>
-    
-    <center>
     <p>Тук можете да намерите нашите 3D Продукти</p>
-    </center>
-    
-    <div class="models-container">
 
+    <div class="models-container">
       <!-- Model 1 -->
-      <a href="eugy_panda.html" class="model-card">
-        <img src="pictures/eugy_panga.png" alt="Eugy Panda">
+      <a href="toothpick_gun.html" class="model-card">
+        <img src="pictures/toothpick_gun.png" alt="Toothpick Gun">
         <div class="description">
-          <h2>Eugy Panda</h2>
-          <p>
-            Очарователен 3D модел на панда, изработен с внимание към детайла – идеален за подарък или декорация.
-          </p>
+          <h2>Пистолет</h2>
+          <p>Забавен и креативен 3D модел на <strong>Пистолет</strong>, който изстрелва клечки за зъби!</p>
         </div>
       </a>
 
       <!-- Model 2 -->
-      <a href="toothpick_gun.html" class="model-card">
-        <img src="pictures/toothpick_gun.png" alt="Eugy Panda">
+      <a href="karambit.html" class="model-card">
+        <img src="pictures/karambit.png" alt="Karambit">
         <div class="description">
-          <h2>Toothpick Gun</h2>
-          <p>
-            Забавен и креативен 3D модел на малък пистолет изтрелващ клечки за зъби, 
-            който изстрелва клечки за зъби!
-          </p>
+          <h2>Карамбит</h2>
+          <p>Стилен и модерен 3D модел на <strong>Карамбит</strong>, вдъхновен от популярните игри и бойни изкуства.</p>
         </div>
       </a>
 
       <!-- Model 3 -->
-      <a href="karambit.html" class="model-card">
-        <img src="pictures/karambit.png" alt="Eugy Panda">
+      <a href="katana.html" class="model-card">
+        <img src="pictures/katana.png" alt="Katana">
         <div class="description">
-          <h2>Karambit</h2>
-          <p>
-            Стилен и модерен 3D модел на Karambit, вдъхновен от популярните игри 
-            и бойни изкуства.
-          </p>
+          <h2>Катана</h2>
+          <p>Елегантен и детайлен 3D модел на <strong>Катана</strong>, вдъхновен от традиционните японски мечове.</p>
+        </div>
+      </a>
+      
+      <!-- Model 4 -->
+      <a href="valorant_knife.html" class="model-card">
+        <img src="pictures/valorant_knife.png" alt="Valorant Knife">
+        <div class="description">
+          <h2>Нож</h2>
+          <p>Впечатляващ 3D модел на <strong>Нож</strong>, вдъхновен от популярната игра <em>Valorant</em>.</p>
         </div>
       </a>
 
+      <!-- Model 5 -->
+      <a href="rose_bear.html" class="model-card">
+        <img src="pictures/rose_bear.png" alt="Rose Bear">
+        <div class="description">
+          <h2>Мече</h2>
+          <p>Очарователен 3D модел на <strong>меченце, изработено от рози!</strong></p>
+        </div>
+      </a>
+
+      <!-- Model 6 -->
+      <a href="eyeglasses_openbox.html" class="model-card">
+        <img src="pictures/eyeglasses_openbox.png" alt="Open Box for Eyeglasses">
+        <div class="description">
+          <h2>Отворена Кутийка за Очила</h2>
+          <p>Минималистичен 3D модел на <strong>кутия за очила, без капак.</strong></p>
+        </div>
+      </a>
+
+      <!-- Model 7 -->
+      <a href="fidget_toy.html" class="model-card">
+        <img src="pictures/fidget_toy.png" alt="Fidget toy with gear mechanism">
+        <div class="description">
+          <h2>Фиджет играчка с зъбни механизми</h2>
+          <p>Интерактивен 3D модел на <strong>Играчка с въртящи се зъбни колела и подвижни части.</strong></p>
+        </div>
+      </a>
     </div>
   </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

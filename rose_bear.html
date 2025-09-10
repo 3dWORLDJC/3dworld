@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D World - Powered by JC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rose Bear | 3D World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap&subset=cyrillic" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Rubik', sans-serif;
       background-color: #fff;
-      color: #222; 
+      color: #222;
     }
 
     /* Navbar */
@@ -110,28 +110,58 @@
       max-width: 900px;
       margin: 40px auto;
       padding: 20px;
-      background-color: #f0f0f0; 
+      background-color: #f0f0f0;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      text-align: center;
     }
 
     .content h1 {
-      color: #aa9a0c; 
+      color: #aa9a0c;
       margin-top: 0;
-      text-align: center;
     }
 
-    .content h4 {
-      color: #aa9a0c; 
-      margin: 0;
-      text-align: center;
+    .content img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      margin-top: 15px;
+    }
+
+    /* Back button */
+    .back-button {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #000;
+      border: 2px solid #000;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #fff;
+      color: #aa9a0c;
+      border-color: #aa9a0c;
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <div class="navbar">
-    <img src="pictures/logo.png" alt="Lider Deliver Logo">
+    <img src="pictures/logo.png" alt="3D World Logo">
     <div class="nav-links" id="navLinks">
       <a href="home.html">Начало</a>
       <a href="3d_models.html">3D Модели</a>
@@ -145,9 +175,19 @@
     </div>
   </div>
 
+  <!-- Content -->
   <div class="content">
-    <h1>Добре дошли в официалният сайт на 3D World!</h1> 
-    <h4>Powered by JC</h4>
+    <h1>Мече</h1>
+    <img src="pictures/rose_bear.png" alt="Rose Bear 3D Модел" />
+    <p>
+      Очарователен 3D модел на меченце, изработено от рози! Този модел е идеален за романтични подаръци,
+      декорация или за създаване на уникални ръчно направени проекти. Със своите детайлни елементи и
+      прецизен дизайн, Rose Bear ще впечатли всеки!
+    </p>
+    <p>
+      Моделът е оптимизиран за 3D принтиране и е подходящ както за начинаещи, така и за напреднали.
+    </p>
+    <a href="3d_models.html" class="back-button">⬅ Назад към 3D Модели</a>
   </div>
 
   <script>

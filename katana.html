@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karambit | 3D World Форум</title>
+  <title>Katana | 3D World Форум</title>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap&subset=cyrillic" rel="stylesheet" />
   <style>
     body {
@@ -38,18 +38,15 @@
       height: 150px;
       width: 150px;
       object-fit: cover;
+      margin-right: 40px;
       border-radius: 0px;
       background-color: #fff;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 15px;
-    }
-
-    .nav-links a {
+    .navbar a {
       color: #fff;
       text-decoration: none;
+      margin-right: 30px;
       font-weight: 700;
       font-size: 20px;
       padding: 10px 20px;
@@ -58,51 +55,10 @@
       transition: all 0.3s;
     }
 
-    .nav-links a:hover {
+    .navbar a:hover {
       color: #aa9a0c;
       border-color: #aa9a0c;
       background-color: #222;
-    }
-
-    /* Hamburger menu for mobile */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #fff;
-      transition: all 0.3s;
-    }
-
-    /* Slide-in menu */
-    @media (max-width: 768px) {
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -250px;
-        width: 250px;
-        height: 100%;
-        background-color: #000;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        transition: right 0.3s ease;
-        z-index: 1000;
-      }
-
-      .nav-links.active {
-        right: 0;
-      }
-
-      .hamburger {
-        display: flex;
-      }
     }
 
     /* Content box */
@@ -122,7 +78,7 @@
     }
 
     .content img {
-      max-width: 400px;
+      max-width: 450px;
       width: 100%;
       height: auto;
       margin-bottom: 20px;
@@ -135,7 +91,7 @@
       line-height: 1.6;
       color: #333;
     }
-
+    
     .back-button {
       display: inline-block;
       padding: 12px 25px;
@@ -160,42 +116,26 @@
   <!-- Navbar -->
   <div class="navbar">
     <img src="pictures/logo.png" alt="3D World Logo" />
-    <div class="nav-links" id="navLinks">
-      <a href="home.html">Начало</a>
-      <a href="3d_models.html">3D Модели</a>
-      <a href="about_us.html">За нас</a>
-      <a href="contacts.html">Контакти</a>
-    </div>
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <a href="home.html">Начало</a>
+    <a href="3d_models.html">3D Модели</a>
+    <a href="about_us.html">За нас</a>
+    <a href="contacts.html">Контакти</a>
   </div>
 
   <!-- Content -->
   <div class="content">
-    <h1>Карамбит</h1>
-    <img src="pictures/karambit.png" alt="Karambit 3D Модел" />
+    <h1>Катана</h1>
+    <img src="pictures/katana.png" alt="Katana 3D Модел" />
     <p>
-      Стилен и модерен 3D модел на <strong>Karambit</strong>, вдъхновен от популярните игри 
-      и бойни изкуства. Моделът е детайлен и подходящ както за колекционери, 
-      така и за хора, които обичат 3D принтиране на декоративни предмети.
+      Елегантен и детайлен 3D модел на <strong>Katana</strong>, вдъхновен от традиционните японски мечове.  
+      Създаден с внимание към всеки детайл, този модел е идеален за фенове на бойните изкуства,  
+      колекционери и любители на изкуството.
     </p>
     <p>
-      Може да бъде изработен в различни цветове и размери според предпочитанията ви. 
-      Прекрасен избор за експерименти с дизайн и довършителни техники.
+      Моделът може да бъде 3D принтиран в реален размер или като умален декоративен вариант.  
+      Подходящ е за персонализиране и боядисване, за да отговаря напълно на вашия стил.
     </p>
     <a href="3d_models.html" class="back-button">⬅ Назад към 3D Модели</a>
   </div>
-
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
