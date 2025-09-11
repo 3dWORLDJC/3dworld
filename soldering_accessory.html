@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soldering Accessory | 3D World</title>
+  <link rel="icon" href="pictures/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap&subset=cyrillic" rel="stylesheet" />
   <style>
     body {
@@ -11,37 +12,40 @@
       font-family: 'Rubik', sans-serif;
       background-color: #fff;
       color: #222;
+      overflow-x: hidden;
     }
 
     /* Navbar */
     .navbar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       background-color: #000;
       padding: 20px 40px;
       box-shadow: 0 2px 5px #000;
       position: relative;
+      z-index: 1000;
+      gap: 25px;
     }
 
     .navbar img {
-      height: 150px;
-      width: 150px;
+      height: 120px;
+      width: 120px;
       object-fit: cover;
-      border-radius: 0px;
       background-color: #fff;
     }
 
     .nav-links {
       display: flex;
       gap: 15px;
+      transition: right 0.3s ease;
     }
 
     .nav-links a {
       color: #fff;
       text-decoration: none;
       font-weight: 700;
-      font-size: 20px;
+      font-size: 18px;
       padding: 10px 20px;
       border: 1.5px solid #fff;
       border-radius: 8px;
@@ -54,27 +58,41 @@
       background-color: #222;
     }
 
-    /* Hamburger menu for mobile */
+    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
       gap: 5px;
+      margin-left: auto;
+      z-index: 1100;
     }
 
     .hamburger div {
-      width: 25px;
+      width: 28px;
       height: 3px;
       background-color: #fff;
-      transition: all 0.3s;
+      border-radius: 2px;
+      transition: all 0.3s ease;
     }
 
-    /* Slide-in menu for mobile */
+    /* Hamburger animation */
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Mobile menu */
     @media (max-width: 768px) {
       .nav-links {
         position: fixed;
         top: 0;
-        right: -250px;
+        right: -260px;
         width: 250px;
         height: 100%;
         background-color: #000;
@@ -82,7 +100,8 @@
         align-items: center;
         justify-content: center;
         gap: 30px;
-        transition: right 0.3s ease;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.5);
+        transition: right 0.4s ease;
         z-index: 1000;
       }
 
@@ -92,6 +111,19 @@
 
       .hamburger {
         display: flex;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .nav-links {
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+      }
+
+      .hamburger {
+        display: none;
       }
     }
 
@@ -167,7 +199,7 @@
 
   <!-- Content -->
   <div class="content">
-    <h1>Солдеринг Аксесоар</h1>
+    <h1>Аксесоар за запояване</h1>
     <img src="pictures/soldering_accessory.png" alt="Soldering Accessory 3D Модел" />
     <p>
       Практичен 3D модел на солдеринг аксесоар, идеален за помощ при работа с електроника и микроелементи.
@@ -182,6 +214,7 @@
 
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
     });
   </script>
 </body>
